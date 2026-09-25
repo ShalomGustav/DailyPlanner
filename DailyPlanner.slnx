@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="DailyPlanner.Application/DailyPlanner.Application.csproj" />
+  <Project Path="DailyPlanner.Domain/DailyPlanner.Domain.csproj" />
+  <Project Path="DailyPlanner.Http/DailyPlanner.Http.csproj" />
+  <Project Path="DailyPlanner.Integration/DailyPlanner.Integrations.csproj" />
+  <Project Path="DailyPlanner.Scheduler/DailyPlanner.Scheduler.csproj" />
+  <Project Path="DailyPlanner.ServiceHost/DailyPlanner.ServiceHost.csproj" />
+</Solution>

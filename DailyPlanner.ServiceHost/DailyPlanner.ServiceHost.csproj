@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DailyPlanner.Application\DailyPlanner.Application.csproj" />
+    <ProjectReference Include="..\DailyPlanner.Domain\DailyPlanner.Domain.csproj" />
+    <ProjectReference Include="..\DailyPlanner.Http\DailyPlanner.Http.csproj" />
+    <ProjectReference Include="..\DailyPlanner.Integration\DailyPlanner.Integrations.csproj" />
+    <ProjectReference Include="..\DailyPlanner.Scheduler\DailyPlanner.Scheduler.csproj" />
+  </ItemGroup>
+
+</Project>
