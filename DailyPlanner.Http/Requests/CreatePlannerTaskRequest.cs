@@ -1,19 +1,19 @@
-﻿namespace DailyPlanner.Application.Models
+﻿namespace DailyPlanner.Http.Requests
 {
     /// <summary>
-    /// Модель создания задачи планировщика
+    /// HTTP-модель запроса на создание задачи планировщика
     /// </summary>
-    public class CreatePlannerTaskModel
+    public class CreatePlannerTaskRequest
     {
         /// <summary>
         /// Название задачи
         /// </summary>
-        public string Title { get; set; }
+        public string Title { get; set; } = string.Empty;
 
         /// <summary>
         /// Описание задачи
         /// </summary>
-        public string Description { get; set; }
+        public string Description { get; set; } = string.Empty;
 
         /// <summary>
         /// Дата и время, к которым необходимо выполнить задачу

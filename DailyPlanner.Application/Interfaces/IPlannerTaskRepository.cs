@@ -29,5 +29,12 @@ namespace DailyPlanner.Application.Interfaces
         /// <param name="cancellationToken">Токен отмены операции</param>
         /// <returns>Список задач</returns>
         Task<IReadOnlyCollection<PlannerTaskModel>> GetAllAsync(CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Обновляет задачу планировщика.
+        /// </summary>
+        /// <param name="task">Задача с обновлёнными данными.</param>
+        /// <param name="cancellationToken">Токен отмены операции.</param>
+        Task UpdateAsync(PlannerTaskModel task, CancellationToken cancellationToken = default);
     }
 }
