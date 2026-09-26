@@ -1,9 +1,11 @@
-﻿namespace DailyPlanner.Application.Models
+﻿using DailyPlanner.Application.Models;
+
+namespace DailyPlanner.Domain.Entities
 {
     /// <summary>
-    /// Модель задачи планировщика
+    /// Сущность задачи планировщика
     /// </summary>
-    public class PlannerTaskModel
+    public class PlannerTaskEntity
     {
         /// <summary>
         /// Идентификатор задачи
@@ -11,7 +13,7 @@
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Заголовок задачи
+        /// Название задачи.
         /// </summary>
         public string Title { get; set; }
 
@@ -21,7 +23,7 @@
         public string Description { get; set; }
 
         /// <summary>
-        /// Дата и время с которым необходимо выполнить задачу
+        /// Дата и время, к которым необходимо выполнить задачу
         /// </summary>
         public DateTime DueDate { get; set; }
 
@@ -31,7 +33,7 @@
         public DateTime CreatedAt { get; set; }
 
         /// <summary>
-        /// Текущий статус задачи.
+        /// Текущий статус задачи
         /// </summary>
         public PlannerTaskStatus Status { get; set; }
     }
