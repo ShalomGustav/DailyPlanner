@@ -28,7 +28,9 @@ namespace DailyPlanner.Application.Services
             return _plannerTaskRepository.GetAllAsync(cancellationToken);
         }
 
-        public async Task<PlannerTaskModel?> ChangeStatusAsync(ChangePlannerTaskStatusModel model, CancellationToken cancellationToken = default)
+        public async Task<PlannerTaskModel?> ChangeStatusAsync(
+            ChangePlannerTaskStatusModel model,
+            CancellationToken cancellationToken = default)
         {
             var task = await _plannerTaskRepository.GetByIdAsync(model.Id, cancellationToken);
 
@@ -56,11 +58,36 @@ namespace DailyPlanner.Application.Services
                 Title = model.Title,
                 Description = model.Description,
                 DueDate = model.DueDate,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
                 Status = PlannerTaskStatus.New
             };
 
             await _plannerTaskRepository.AddAsync(task, cancellationToken);
+
+            return task;
+        }
+
+        public Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
+        {
+            return _plannerTaskRepository.DeleteAsync(id, cancellationToken);
+        }
+
+        public async Task<PlannerTaskModel?> UpdateAsync(
+            UpdatePlannerTaskModel model,
+            CancellationToken cancellationToken = default)
+        {
+            var task = await _plannerTaskRepository.GetByIdAsync(model.Id, cancellationToken);
+
+            if (task == null)
+            {
+                return null;
+            }
+
+            task.Title = model.Title;
+            task.Description = model.Description;
+            task.DueDate = model.DueDate;
+
+            await _plannerTaskRepository.UpdateAsync(task, cancellationToken);
 
             return task;
         }

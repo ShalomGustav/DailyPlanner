@@ -36,5 +36,15 @@ namespace DailyPlanner.Application.Interfaces
         /// <param name="task">Задача с обновлёнными данными.</param>
         /// <param name="cancellationToken">Токен отмены операции.</param>
         Task UpdateAsync(PlannerTaskModel task, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Удаляет задачу планировщика
+        /// </summary>
+        /// <param name="id">Идентификатор задачи.</param>
+        /// <param name="cancellationToken">Токен отмены операции</param>
+        /// <returns>
+        /// true, если задача была удалена; иначе false
+        /// </returns>
+        Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default);
     }
 }
