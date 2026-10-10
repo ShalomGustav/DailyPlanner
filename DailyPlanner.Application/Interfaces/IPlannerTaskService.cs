@@ -44,5 +44,27 @@ namespace DailyPlanner.Application.Interfaces
         Task<PlannerTaskModel?> ChangeStatusAsync(
             ChangePlannerTaskStatusModel model,
             CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Удаляет задачу планировщика
+        /// </summary>
+        /// <param name="id">Идентификатор задачи</param>
+        /// <param name="cancellationToken">Токен отмены операции</param>
+        /// <returns>
+        /// true, если задача была удалена; иначе false
+        /// </returns>
+        Task<bool> DeleteAsync(
+            Guid id,
+            CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Обновляет данные задачи планировщика
+        /// </summary>
+        /// <param name="model">Модель изменения задачи</param>
+        /// <param name="cancellationToken">Токен отмены операции</param>
+        /// <returns>Обновлённая задача или null, если задача не найдена</returns>
+        Task<PlannerTaskModel?> UpdateAsync(
+            UpdatePlannerTaskModel model,
+            CancellationToken cancellationToken = default);
     }
 }

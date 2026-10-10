@@ -56,5 +56,21 @@ namespace DailyPlanner.Domain.Repositories
 
             await _context.SaveChangesAsync(cancellationToken);
         }
+
+        public async Task<bool> DeleteAsync(Guid id, CancellationToken cancellationToken = default)
+        {
+            var entity = await _context.PlannerTasks.FirstOrDefaultAsync(it => it.Id == id, cancellationToken);
+
+            if (entity != null)
+            {
+                return false;
+            }
+
+            _context.PlannerTasks.Remove(entity);
+
+            await _context.SaveChangesAsync(cancellationToken);
+
+            return true;
+        }
     }
 }
